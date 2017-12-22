@@ -28,37 +28,6 @@
  * @see upgrade_plugins_modules()
  */
 function xmldb_block_hidden_course_install() {
-	global $DB;
-
-    // Form for asking to do so does not work yet.
-
-    /*
-    //moodleform is defined in formslib.php
-    require_once("$CFG->libdir/formslib.php");
-
-    class simplehtml_form extends moodleform {
-
-        public function definition() {
-            global $CFG;
-
-            $mform = $this->_form; // Don't forget the underscore!
-
-            // thirs param is label, fourth is text
-            $mform->addElement('static', 'description', "Hier kommt das Label hin!",
-                "Wenn Sie den Block auf jeder Kursseite angezeigt bekommen möchten, können Sie JA klicken");
-
-            // Add Buttons
-            $mform->addElement('button', 'intro', "HIER KOMMT DER OK-BUTTON HIN");
-            $mform->addElement('button', 'intro', "HIER KOMMT DER NEIN-BUTTON HIN");
-
-			//$this->content->text = $mform->render();
-            //displays the form
-            $mform->display();
-            $mform->render();
-        }
-    }
-    */
-
-	$DB->insert_record('block_instances', array('blockname'=> 'hidden_course','parentcontextid' => 1, 'showinsubcontexts' => 1, 'requiredbytheme' => 0, 'pagetypepattern' => 'course-view-*', 'defaultregion' => 'side-pre', 'defaultweight' => 0), $returnid=true, $bulk=false);
-
+    global $CFG;
+    redirect($CFG->wwwroot.'/admin/settings.php?section=blocksettinghidden_course', 'You are getting redirected to the settings.', 0);
 }

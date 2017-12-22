@@ -24,3 +24,5 @@
 
  $string['pluginname'] = 'Hidden course';
  $string['message'] = 'This course is not visible for students!<p></p><p>As soon as you are satisfied with your settings you can set the course to visible.</p>';
+ $string['settingname'] = 'Activate on all course pages';
+ $string['settingdescription'] = 'Check this box to activate the plugin in all invisble courses. This will add an entry in the database table "block instances"';

@@ -17,9 +17,9 @@
 /**
  * Declares the block's capabilities
  *
- * @package     block_course_contents
+ * @package     block_hidden_course
  * @category    access
- * @copyright   2012 David Mudrak <david@moodle.com>
+ * @copyright   2017 <benedikt-schneider@hrz.tu-darmstadt.de>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -27,19 +27,17 @@ defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
 
-    'block/hidden_course:addinstance' => array(
-        'riskbitmask' => RISK_SPAM | RISK_XSS,
-
+    'block/hidden_course:myaddinstance' => array(
         'captype' => 'write',
-        'contextlevel' => CONTEXT_BLOCK,
+        'contextlevel' => CONTEXT_SYSTEM,
         'archetypes' => array(
-            'editingteacher' => CAP_ALLOW,
-            'manager' => CAP_ALLOW
+            'user' => CAP_ALLOW
         ),
 
-        'clonepermissionsfrom' => 'moodle/site:manageblocks'
+        'clonepermissionsfrom' => 'moodle/my:manageblocks'
     ),
-	'block/hidden_course:myaddinstance' => array(
+
+    'block/hidden_course:addinstance' => array(
         'riskbitmask' => RISK_SPAM | RISK_XSS,
 
         'captype' => 'write',

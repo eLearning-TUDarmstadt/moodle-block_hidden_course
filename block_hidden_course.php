@@ -48,7 +48,16 @@ class block_hidden_course extends block_base {
      */
     public function applicable_formats() {
         // At first the block has to be visible for every moodle-site
-		return array('all' => true);
+		return array('course-view-*' => true);
+    }
+
+    /**
+     * Does the block have a global settings.
+     *
+     * @return bool
+     */
+    public function has_config() {
+        return true;
     }
 
     /**
@@ -72,7 +81,7 @@ class block_hidden_course extends block_base {
 
 		//echo "<pre>"; print_r($this); echo "</pre>";
 
-		if ($this->page->course->visible == 0) {
+        if ($this->page->course->visible == 0) {
             // Add message
             $this->content->text = '<span style="color: #ff0000;">'.get_string('message', 'block_hidden_course').'</span>';
 
@@ -81,7 +90,7 @@ class block_hidden_course extends block_base {
 		}
         else {
             // Empty content means that the block won't be displayed
-			$this->content->text = '';
+            $this->content->text = '';
 		}
 
         return $this->content;

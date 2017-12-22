@@ -2,7 +2,8 @@
 
 Description
 ===================
-This block is automatically shown in every moodle course set to invisble in the settings. It helps teachers figure out why their students can not see their course.
+This block can be shown in every moodle course set to invisble. It helps teachers figure out why their students can not see their courses.
+It is especially useful for the new boost theme as the course name is not greyed out anymore when set to not visible.
 
 There already is a [plugin which did the same thing](https://moodle.org/plugins/block_hiddencourse) but it does not work anymore as it was developed for Moodle 2.0 and fiddled with the html_attributes which do not exist anymore.
 
@@ -11,12 +12,7 @@ Installation
 Unzip the archive in your "moodle/block"-folder
 * Or clone with ```git clone https://github.com/eLearning-TUDarmstadt/moodle-block_hidden_course block/hidden_course```
 
-Setup - Not required in the current plugin - it gets set automatically!
+Setup
 ===================
-Add the block to your Site home: your-moodle-site/?redirect=0 (Customise this page -> Add block)
-
-Go to the block-settings and select "Any page" as display on page types
-
-Go into a random course and into the block-setting
-
-For display on page type select "Any type of course main page"
+After installing the Plugin you are redirected to the settings:
+![screenshot](https://user-images.githubusercontent.com/15816473/34302074-a12de6a4-e72f-11e7-806d-f6019ef78738.jpg)
