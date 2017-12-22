@@ -10,7 +10,7 @@ There already is a [plugin which did the same thing](https://moodle.org/plugins/
 Installation
 ===================
 Unzip the archive in your "moodle/block"-folder
-* Or clone with ```git clone https://github.com/eLearning-TUDarmstadt/moodle-block_hidden_course block/hidden_course```
+* Or clone with ```git clone https://github.com/eLearning-TUDarmstadt/moodle-block_hidden_course blocks/hidden_course```
 
 Setup
 ===================
