@@ -24,26 +24,12 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+require_once('hiddencourselib.php');
+
 if ($ADMIN->fulltree) {
 
     // Is stored in the table "mdl-config" with it's name and is accessible with $CFG->block_hidden_course_check
-    $settings->add(new admin_setting_configcheckbox_new('block_hidden_course_check', get_string('settingname', 'block_hidden_course'),
-                      get_string('settingdescription', 'block_hidden_course'), 0));
-}
-
-// Extending the checkbox to execute custom code
-class admin_setting_configcheckbox_new extends admin_setting_configcheckbox {
-    public function write_setting($data) {
-        global $DB, $CFG;
-        if ((string)$data === $this->yes) {
-            set_config('block_hidden_course_check', true);
-            $DB->insert_record('block_instances', array('blockname'=> 'hidden_course','parentcontextid' => 1, 'showinsubcontexts' => 1, 'requiredbytheme' => 0, 'pagetypepattern' => 'course-view-*', 'defaultregion' => 'side-pre', 'defaultweight' => 0));
-        } else {
-            set_config('block_hidden_course_check', false);
-            $DB->delete_records('block_instances', array('blockname'=> 'hidden_course','parentcontextid' => 1, 'showinsubcontexts' => 1, 'requiredbytheme' => 0, 'pagetypepattern' => 'course-view-*', 'defaultregion' => 'side-pre', 'defaultweight' => 0));
-        }
-
-        redirect($CFG->wwwroot.'/admin/settings.php?section=blocksettinghidden_course', get_string('changessaved'), 0);
-        return (parent::write_setting($data));
-    }
+    // The class is taken from hiddencourselib.php
+    $settings->add(new admin_setting_configcheckbox_hidden_course('block_hidden_course_check', get_string('settingname', 'block_hidden_course'),
+                     get_string('settingdescription', 'block_hidden_course'), 0));
 }
