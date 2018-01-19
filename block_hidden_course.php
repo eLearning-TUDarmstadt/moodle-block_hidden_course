@@ -47,8 +47,8 @@ class block_hidden_course extends block_base {
      * @return array
      */
     public function applicable_formats() {
-        // At first the block has to be visible for every moodle-site
-		return array('course-view-*' => true);
+        // At first, the block has to be visible for every moodle-site.
+        return array('course-view-*' => true);
     }
 
     /**
@@ -65,7 +65,7 @@ class block_hidden_course extends block_base {
      * @return stdClass block content info
      */
     public function get_content() {
-		global $CFG;
+        global $CFG;
 
         if (!is_null($this->content)) {
             return $this->content;
@@ -79,19 +79,17 @@ class block_hidden_course extends block_base {
             return $this->content;
         }
 
-		//echo "<pre>"; print_r($this); echo "</pre>";
-
         if ($this->page->course->visible == 0) {
-            // Add message
+            // Add message.
             $this->content->text = '<span style="color: #ff0000;">'.get_string('message', 'block_hidden_course').'</span>';
 
-            // Add Link to course settings
-            $this->content->text = $this->content->text.'<a href='.$CFG->wwwroot.'/course/edit.php?id='.$this->page->course->id.'>'.get_string('editcoursesettings').'</a>';
-		}
-        else {
-            // Empty content means that the block won't be displayed
+            // Add Link to course settings.
+            $this->content->text = $this->content->text.
+                '<a href='.$CFG->wwwroot.'/course/edit.php?id='.$this->page->course->id.'>'.get_string('editcoursesettings').'</a>';
+        } else {
+            // Empty content means that the block won't be displayed.
             $this->content->text = '';
-		}
+        }
 
         return $this->content;
     }

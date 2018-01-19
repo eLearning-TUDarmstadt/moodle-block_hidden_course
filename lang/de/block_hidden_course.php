@@ -22,7 +22,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
- $string['pluginname'] = 'Versteckter Kurs';
  $string['message'] = 'Dieser Kurs ist für Studierende nicht sichtbar!<p></p><p>Sobald Sie mit Ihren Einstellungen zufrieden sind, können Sie den Kurs auf sichtbar schalten.</p>';
+
+ $string['pluginname'] = 'Versteckter Kurs';
  $string['settingname'] = 'Auf allen Kursseiten aktivieren';
  $string['settingdescription'] = 'Wenn die Checkbox aktiviert wird, wird der Block in allen unsichtbaren Kursen angezeigt. Es wird ein Eintrag in der Datenbank-Tabelle "block instances" erstellt';

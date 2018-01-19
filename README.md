@@ -17,6 +17,10 @@ https://YourMoodle.com/admin/settings.php?section=blocksettinghidden_course
 
 ![screenshot](https://user-images.githubusercontent.com/15816473/34302074-a12de6a4-e72f-11e7-806d-f6019ef78738.jpg)
 
+Moodle-versions
+===================
+As of now, this plugin was only tested with Moodle version 3.3! Please report any bugs with other moodle versions
+
 How it works
 ===================
 The checkbox executes code (adding a Database-entry) after activating the checkbox which simply simulates the actions described in this moodle post by Tim Hunt:

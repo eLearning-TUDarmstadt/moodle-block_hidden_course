@@ -22,21 +22,29 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
- // Extending the checkbox to execute custom code
- class admin_setting_configcheckbox_hidden_course extends admin_setting_configcheckbox {
-     public function write_setting($data) {
-         global $DB, $CFG;
+defined('MOODLE_INTERNAL') || die();
 
-         if ((string)$data === $this->yes) {
-             set_config('block_hidden_course_check', true);
-             // Add the block to every course
-             $DB->insert_record('block_instances', array('blockname'=> 'hidden_course','parentcontextid' => 1, 'showinsubcontexts' => 1, 'requiredbytheme' => 0, 'pagetypepattern' => 'course-view-*', 'defaultregion' => 'side-pre', 'defaultweight' => 0));
-         } else {
-             set_config('block_hidden_course_check', false);
-             // Delete the block from every course
-             $DB->delete_records('block_instances', array('blockname'=> 'hidden_course','parentcontextid' => 1, 'showinsubcontexts' => 1, 'requiredbytheme' => 0, 'pagetypepattern' => 'course-view-*', 'defaultregion' => 'side-pre', 'defaultweight' => 0));
-         }
+ // Extending the checkbox to execute custom code.
+class admin_setting_configcheckbox_hidden_course extends admin_setting_configcheckbox {
+    public function write_setting($data) {
+        global $DB, $CFG;
 
-         return (parent::write_setting($data));
-     }
- }
+        if ((string)$data === $this->yes) {
+            set_config('block_hidden_course_check', true);
+            // Add the block to every course.
+            $DB->insert_record('block_instances', array('blockname' => 'hidden_course', 'parentcontextid' => 1,
+                                                        'showinsubcontexts' => 1, 'requiredbytheme' => 0,
+                                                        'pagetypepattern' => 'course-view-*',
+                                                        'defaultregion' => 'side-pre', 'defaultweight' => 0));
+        } else {
+            set_config('block_hidden_course_check', false);
+            // Delete the block from every course.
+            $DB->delete_records('block_instances', array('blockname' => 'hidden_course', 'parentcontextid' => 1,
+                                                        'showinsubcontexts' => 1, 'requiredbytheme' => 0,
+                                                        'pagetypepattern' => 'course-view-*',
+                                                        'defaultregion' => 'side-pre', 'defaultweight' => 0));
+        }
+
+        return (parent::write_setting($data));
+    }
+}

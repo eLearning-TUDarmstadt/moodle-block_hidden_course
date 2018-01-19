@@ -28,8 +28,8 @@ require_once('hiddencourselib.php');
 
 if ($ADMIN->fulltree) {
 
-    // Is stored in the table "mdl-config" with it's name and is accessible with $CFG->block_hidden_course_check
-    // The class is taken from hiddencourselib.php
-    $settings->add(new admin_setting_configcheckbox_hidden_course('block_hidden_course_check', get_string('settingname', 'block_hidden_course'),
-                     get_string('settingdescription', 'block_hidden_course'), 0));
+    // Is stored in the table "mdl-config" with it's name and is accessible with $CFG->block_hidden_course_check.
+    // The class is taken from hiddencourselib.php.
+    $settings->add(new admin_setting_configcheckbox_hidden_course('block_hidden_course_check',
+                    get_string('settingname', 'block_hidden_course'), get_string('settingdescription', 'block_hidden_course'), 0));
 }
