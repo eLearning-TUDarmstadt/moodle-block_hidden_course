@@ -35,7 +35,8 @@ class admin_setting_configcheckbox_hidden_course extends admin_setting_configche
             $DB->insert_record('block_instances', array('blockname' => 'hidden_course', 'parentcontextid' => 1,
                                                         'showinsubcontexts' => 1, 'requiredbytheme' => 0,
                                                         'pagetypepattern' => 'course-view-*',
-                                                        'defaultregion' => 'side-pre', 'defaultweight' => 0));
+                                                        'defaultregion' => 'side-pre', 'defaultweight' => 0,
+                                                        'timemodified' => time(), 'timecreated' =>time()));
         } else {
             set_config('block_hidden_course_check', false);
             // Delete the block from every course.
