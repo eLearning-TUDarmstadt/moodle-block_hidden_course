@@ -85,7 +85,7 @@ class block_hidden_course extends block_base {
 
             // Add Link to course settings.
             $this->content->text = $this->content->text.
-                '<a href='.$CFG->wwwroot.'/course/edit.php?id='.$this->page->course->id.'>'.get_string('editcoursesettings').'</a>';
+                '<u><a href='.$CFG->wwwroot.'/course/edit.php?id='.$this->page->course->id.'>'.get_string('editcoursesettings').'</a></u>';
         } else {
             // Empty content means that the block won't be displayed.
             $this->content->text = '';
