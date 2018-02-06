@@ -22,7 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
- $string['message'] = 'This course is not visible for students!<p></p><p>As soon as you are satisfied with your settings you can set the course to visible.</p>';
+ $string['message'] = 'This course is not visible for students!<p></p><p>To change this, change the "course visibility" to "Show" in the course settings.</p>';
 
  $string['pluginname'] = 'Hidden course';
  $string['settingname'] = 'Activate on all course pages';
