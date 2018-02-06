@@ -22,7 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
- $string['message'] = 'Dieser Kurs ist für Studierende nicht sichtbar!<p></p><p>Sobald Sie mit Ihren Einstellungen zufrieden sind, können Sie den Kurs auf sichtbar schalten.</p>';
+ $string['message'] = 'Dieser Kurs ist für Studierende nicht sichtbar!<p></p><p>Um dies zu ändern, stellen Sie in den Kurseinstellungen die "Kurssichtbarkeit" auf "Anzeigen".</p>';
 
  $string['pluginname'] = 'Versteckter Kurs';
  $string['settingname'] = 'Auf allen Kursseiten aktivieren';
