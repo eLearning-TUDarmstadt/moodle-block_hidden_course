@@ -24,6 +24,6 @@
 
  $string['message'] = 'Dieser Kurs ist für Studierende nicht sichtbar!<p></p><p>Um dies zu ändern, stellen Sie in den Kurseinstellungen die "Kurssichtbarkeit" auf "Anzeigen".</p>';
 
- $string['pluginname'] = 'Versteckter Kurs';
+ $string['pluginname'] = 'Verborgener Kurs';
  $string['settingname'] = 'Auf allen Kursseiten aktivieren';
  $string['settingdescription'] = 'Wenn die Checkbox aktiviert wird, wird der Block in allen unsichtbaren Kursen angezeigt. Es wird ein Eintrag in der Datenbank-Tabelle "block instances" erstellt';
