@@ -27,4 +27,4 @@ defined('MOODLE_INTERNAL') || die();
 $plugin->component = 'block_hidden_course';
 $plugin->release = '0.4';
 $plugin->version = 2018011900;
-$plugin->requires = 2017051500;
+$plugin->requires = 2016120500;
